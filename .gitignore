@@ -14,3 +14,4 @@ qrc_*
 *.etag
 *.hex
 *.dll
+/ArduManFX
