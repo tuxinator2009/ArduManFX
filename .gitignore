@@ -1,0 +1,16 @@
+/erwinRepo/
+/example-flashcarts/
+/jsScripts/
+/pyScripts/
+/asScripts/
+/src/angelscript/
+*.o
+Makefile
+moc_*
+qrc_*
+/Screenshot_2020-02-20_01-44-42.png
+/.qmake.stash
+*.bin
+*.etag
+*.hex
+*.dll

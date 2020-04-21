@@ -1,0 +1,118 @@
+{
+	"Global Environment":{
+		"PATH":"C:\\Qt\\5.12.0\\mingw73_64\\bin;C:\\Qt\\Tools\\mingw730_64\\bin;%PATH%"
+	},
+	"Processes":[
+		{
+			"Title":"Build",
+			"Description":"Compile the project.",
+			"Icon":":/icons/hammer-wrench-icon.png",
+			"Commands":[
+				{
+					"Command":"qmake",
+					"Arguments":["CONFIG += debug", "PROJECT = %PROJECT%"]
+				},
+				{
+					"Command":"mingw32-make",
+					"Arguments":[]
+				}
+			]
+		},
+		{
+			"Title":"Clean",
+			"Description":"Cleanup compiled code.",
+			"Icon":":/icons/clean.png",
+			"Commands":[
+				{
+					"Command":"mingw32-make",
+					"Arguments":["clean"]
+				}
+			]
+		},
+		{
+			"Title":"Dist Clean",
+			"Description":"Completely remove all compiled code.",
+			"Icon":":/icons/full-clean.png",
+			"Commands":[
+				{
+					"Command":"mingw32-make",
+					"Arguments":["distclean"]
+				}
+			]
+		},
+		{
+			"Title":"Run",
+			"Description":"Launch the program.",
+			"Icon":":/icons/play.png",
+			"Commands":[
+				{
+					"Command":"./%PROJECT%",
+					"Arguments":[]
+				}
+			]
+		},
+		{
+			"Title":"Debug",
+			"Description":"Run program with the gdb debuger.",
+			"Icon":":/icons/debug.png",
+			"Commands":[
+				{
+					"Command":"gdb",
+					"Arguments":["./%PROJECT%"]
+				}
+			]
+		},
+		{
+			"Title":"Release",
+			"Description":"Build a release version of the project.",
+			"Icon":":/icons/package.png",
+			"Commands":[
+				{
+					"Command":"cmd",
+					"Arguments":["/q/c", "if", "exist", ".\\%PROJECT%.exe", "mingw32-make", "distclean"]
+				},
+				{
+					"Command":"qmake",
+					"Arguments":["CONFIG += release", "PROJECT = %PROJECT%"]
+				},
+				{
+					"Command":"mingw32-make",
+					"Arguments":["-j5"]
+				},
+				{
+					"Command":"cmd",
+					"Arguments":["/q/c", "if", "not", "exist", "C:\\Qt\\Released\\%PROJECT%.exe", "mkdir", "C:\\Qt\\Released\\%PROJECT%"]
+				},
+				{
+					"Command":"robocopy",
+					"Arguments":[
+						"C:\\Qt\\Projects\\%PROJECT%",
+						"C:\\Qt\\Released\\%PROJECT%",
+						"/MIR",
+						"/XF",
+						".qmake.stash",
+						"Makefile",
+						"*.compiler",
+						"*.pro",
+						"*.bat",
+						"/XD",
+						"src",
+						"/NS",
+						"/NC",
+						"/NP",
+						"/NJS"
+					],
+					"Ignore Codes":[1, 2, 3, 4, 5, 6, 7]
+				},
+				{
+					"Command":"windeployqt",
+					"Arguments":["C:\\Qt\\Released\\%PROJECT%\\%PROJECT%.exe"]
+				},
+				{
+					"Command":"cmd",
+					"Arguments":["/q/c", "start", "C:\\Qt\\Released\\%PROJECT%"]
+				}
+			]
+		}
+	]
+}

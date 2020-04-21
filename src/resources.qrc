@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/images">
+    <file>stars_back.png</file>
+    <file>stars_front.png</file>
+    <file>fx.png</file>
+    <file>icon.png</file>
+    <file>arduboy-pixelartV4-white.png</file>
+  </qresource>
+</RCC>
