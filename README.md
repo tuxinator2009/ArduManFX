@@ -1,4 +1,4 @@
-#ArduManFX - A Library Manager for Arduboy's with the FX mod
+# ArduManFX - A Library Manager for Arduboy's with the FX mod
 
 ### Features
 
