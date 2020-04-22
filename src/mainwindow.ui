@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1129</width>
-    <height>682</height>
+    <width>1244</width>
+    <height>719</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,6 +37,18 @@
       </property>
       <property name="text">
        <string>Run ArduManFX Tests</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnRecover">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>RECOVER CORRUPTED ARDUBOY</string>
       </property>
      </widget>
     </item>
@@ -1478,7 +1490,7 @@ IMAGE</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>764</width>
+                  <width>879</width>
                   <height>499</height>
                  </rect>
                 </property>

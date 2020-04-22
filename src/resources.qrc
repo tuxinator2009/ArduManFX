@@ -6,4 +6,7 @@
     <file>icon.png</file>
     <file>arduboy-pixelartV4-white.png</file>
   </qresource>
+  <qresource prefix="/">
+    <file>recovered.hex</file>
+  </qresource>
 </RCC>

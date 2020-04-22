@@ -30,6 +30,7 @@ class MainWindow : public QMainWindow, protected Ui::MainWindow
 		void downloadRead();
 		void downloadFinished();
 		void on_btnRunTests_clicked();
+		void on_btnRecover_clicked();
 		void uploadGame(QString title, QString hexLocation, QString dataLocation);
 	private:
 		struct DownloadFile

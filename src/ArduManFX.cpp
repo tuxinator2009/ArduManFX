@@ -67,7 +67,7 @@ bool ArduManFX::connect()
 	arduboyPort = getComPort();
 	if (arduboyPort.isNull())
 	{
-		errorString = "Failed to find an Arduboy.\n";
+		errorString = "Failed to find an Arduboy.";
 		return false;
 	}
 	arduboy.setPort(arduboyPort);
@@ -458,42 +458,6 @@ bool ArduManFX::writeSketch(QByteArray data, const QVector<bool> &flashPageUsed,
 			if (!waitRead())
 				return false;
 			arduboy.read(1);
-			/*if (verify)
-			{
-				arduboy.write(cmd);
-				if (!waitWrite())
-					return false;
-				if (!waitRead())
-					return false;
-				arduboy.read(1);
-				arduboy.write("g\x00\x40\x46", 4);
-				if (!waitWrite())
-					return false;
-				if (!waitRead())
-					return false;
-				data = arduboy.read(128);
-				printf("error: %s\n", arduboy.errorString().toLocal8Bit().data());
-				if (data != page)
-				{
-					printf("Verify failed at address %d.\n", i * 128);
-					printf("Page (%3d): ", page.count());
-					errorString = QString("Verify failed at address %1.\nUpload Failed.\nPage (%2): ").arg(i * 128).arg(page.count(), 3);
-					for (int j = 0; j < page.count(); ++j)
-					{
-						printf("%02X", (unsigned char)page[j]);
-						errorString += QString("%1").arg(page[j], 2, 16, QChar('0'));
-					}
-					printf("\nRead (%3d): ", data.count());
-					errorString += QString("Read (%1): ").arg(data.count(), 3);
-					for (int j = 0; j < data.count(); ++j)
-					{
-						printf("%02X", (unsigned char)data[j]);
-						errorString += QString("%1").arg(data[j], 2, 16, QChar('0'));
-					}
-					printf("\n");
-					return false;
-				}
-			}*/
 		}
 		if (progress != nullptr)
 			progress->setValue(i + 1);

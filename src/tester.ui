@@ -110,6 +110,42 @@
             <property name="spacing">
              <number>0</number>
             </property>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="btnCreateFX">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Create FX</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="btnWriteSketch">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Write Sketch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="btnWriteEEPROM">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Write EEPROM</string>
+              </property>
+             </widget>
+            </item>
             <item row="0" column="2">
              <widget class="QPushButton" name="btnReadEEPROM">
               <property name="font">
@@ -122,19 +158,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="3">
-             <widget class="QPushButton" name="btnReadSketch">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Read Sketch</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
+            <item row="1" column="1">
              <widget class="QPushButton" name="btnWriteFX">
               <property name="font">
                <font>
@@ -146,15 +170,15 @@
               </property>
              </widget>
             </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="btnWriteSketch">
+            <item row="0" column="3">
+             <widget class="QPushButton" name="btnReadSketch">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Write Sketch</string>
+               <string>Read Sketch</string>
               </property>
              </widget>
             </item>
@@ -179,30 +203,6 @@
               </property>
               <property name="text">
                <string>Port Scan</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QPushButton" name="btnCreateFX">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Create FX</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QPushButton" name="btnWriteEEPROM">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Write EEPROM</string>
               </property>
              </widget>
             </item>

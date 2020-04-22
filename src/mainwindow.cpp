@@ -9,6 +9,7 @@
 #include <random>
 #include <cstdio>
 #include <cstdlib>
+#include "arduboyrecovery.h"
 #include "ArduManFX.h"
 #include "game.h"
 #include "mainwindow.h"
@@ -352,6 +353,13 @@ void MainWindow::on_btnRunTests_clicked()
 	tester->deleteLater();
 }
 
+void MainWindow::on_btnRecover_clicked()
+{
+	ArduboyRecovery *recovery = new ArduboyRecovery(this);
+	recovery->exec();
+	recovery->deleteLater();
+}
+
 void MainWindow::uploadGame(QString title, QString hexLocation, QString dataLocation)
 {
 	Progress *progress;
@@ -394,6 +402,7 @@ void MainWindow::uploadGame(QString title, QString hexLocation, QString dataLoca
 		progress->show();
 		if (!arduboy.writeFlashCart(data, chkVerify->isChecked(), progress->getProgressBar()))
 			QMessageBox::critical(this, "Upload Error", QString("Failed to write data to device.\nReason: %1").arg(ArduManFX::getErrorString()));
+		arduboy.disconnect();
 		progress->close();
 		progress->deleteLater();
 	}

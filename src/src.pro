@@ -11,6 +11,7 @@ CONFIG += c++11
 CONFIG += debug
 
 SOURCES += \
+    arduboyrecovery.cpp \
     ArduManFX.cpp \
     game.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     #angelscript/scriptstdstring.cpp
 
 HEADERS += \
+    arduboyrecovery.h \
     ArduManFX.h \
     game.h \
     mainwindow.h \
@@ -30,6 +32,7 @@ HEADERS += \
     #angelscript/scriptstdstring.h
 
 FORMS += \
+    arduboyrecovery.ui \
     game.ui \
     mainwindow.ui \
     progress.ui \
