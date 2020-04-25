@@ -46,6 +46,7 @@ QString ArduManFX::errorString = "";
 ArduManFX::ArduManFX()
 {
 	arduboy.setReadBufferSize(0);
+	bootloaderActive = false;
 }
 
 ArduManFX::~ArduManFX()
@@ -65,6 +66,7 @@ bool ArduManFX::connect()
 	if (isConnected())
 		return true;
 	arduboyPort = getComPort();
+	bootloaderActive = false;
 	if (arduboyPort.isNull())
 	{
 		errorString = "Failed to find an Arduboy.";
@@ -83,7 +85,11 @@ bool ArduManFX::connect()
 void ArduManFX::disconnect()
 {
 	if (isConnected())
+	{
+		if (bootloaderActive)
+			exitBootloader();
 		arduboy.close();
+	}
 }
 
 bool ArduManFX::startBootloader()
@@ -133,8 +139,21 @@ bool ArduManFX::startBootloader()
 			return false;
 		}
 		QThread::msleep(500);
+		bootloaderActive = true;
 	}
 	return true;
+}
+
+void ArduManFX::exitBootloader()
+{
+	if (isConnected() && bootloaderActive)
+	{
+		arduboy.write("E", 1);
+		waitWrite();
+		waitRead();
+		arduboy.read(1);
+		bootloaderActive = false;
+	}
 }
 
 bool ArduManFX::isConnected()

@@ -16,3 +16,6 @@ Credit for the RAM expansion mod goes to @MrBlinky
 Credit for the Arduboy image goes to @huard_olivier https://twitter.com/huard_olivier
 Credit for the Arduboy device goes to @bateske
 Credit for the unofficial Arduboy repo goes to @eried
+
+## Installation
+No installation necessary. Simply download the binary for your system, extract it and run ArduManFX

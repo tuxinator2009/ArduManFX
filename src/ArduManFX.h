@@ -26,6 +26,7 @@ class ArduManFX
 		bool connect();
 		void disconnect();
 		bool startBootloader();
+		void exitBootloader();
 		bool isConnected();
 		QByteArray readEEPROM();
 		bool writeEEPROM(QByteArray data, bool verify);

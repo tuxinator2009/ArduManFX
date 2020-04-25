@@ -171,6 +171,7 @@ void MainWindow::loadErwinRepo()
 		info.gameID = game["id"].toString();
 		info.rating = 0.0;
 		info.numVotes = -1;
+		info.fx = false;
 		ratingURLString += info.gameID;
 		if (i < items.count() - 1)
 			ratingURLString += "%2C";
@@ -290,7 +291,7 @@ void MainWindow::nextDownload()
 
 void MainWindow::downloadError(QNetworkReply::NetworkError code)
 {
-	Ui_MainWindow::statusBar->showMessage(QString("Network Error: %1").arg(code));
+	Ui_MainWindow::statusBar->showMessage(QString("Network Error (%1): %2").arg(code).arg(reply->errorString()));
 	reply->abort();
 }
 

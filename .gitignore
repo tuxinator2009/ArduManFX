@@ -12,6 +12,7 @@ qrc_*
 /.qmake.stash
 *.bin
 *.etag
-*.hex
 *.dll
 /ArduManFX
+/ArduboyAssistant.ino.hex
+/Inversion.ino.hex

@@ -9,12 +9,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>271</width>
-    <height>136</height>
+    <width>307</width>
+    <height>154</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Progress</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">.QFrame
@@ -475,6 +479,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
