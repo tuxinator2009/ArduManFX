@@ -19,3 +19,6 @@ Credit for the unofficial Arduboy repo goes to @eried
 
 ## Installation
 No installation necessary. Simply download the binary for your system, extract it and run ArduManFX
+
+NOTE: On MacOS you will need to extract the App from the DMG file. A shortcut to the Applications
+folder is provided for your convenience, but it can be extracted and run anywhere and is entirely self contained.
